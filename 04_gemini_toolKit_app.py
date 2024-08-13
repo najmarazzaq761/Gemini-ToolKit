@@ -16,8 +16,12 @@ genai.configure(api_key=API_KEY)
 st.set_page_config(page_title="✨ Gemini Toolkit by Najma Razzaq", page_icon="🧠")
 
 # App title and description
-st.title("🌟 Najma's Gemini Toolkit")
-st.write("### 👋 Welcome to the Gemini Toolkit by Najma Razzaq! This app uses the power of Gemini models to generate content based on various inputs. Choose a task and get started! 🚀")
+st.title("🌟Gemini Toolkit")
+
+# Displaying an image from a file
+st.image('gemini.webp',  use_column_width=True)
+
+# st.write("### 👋 Welcome to the Gemini Toolkit by Najma Razzaq! This app uses the power of Gemini models to generate content based on various inputs. Choose a task and get started! 🚀")
 
 # Sidebar task selection
 task_options = ["📝 Text to Text", "📄 Document Processing", "🖼️ Image to Text", "🔊 Audio to Text", "💻 Code Generation"]
@@ -49,6 +53,13 @@ if selected_option == "📝 Text to Text":
         st.session_state['response_text'] = response.text
 
     st.write(st.session_state['response_text'])
+    # Create a download button
+    st.download_button(
+        label="Download Text",
+        data=st.session_state['response_text'] ,
+        file_name="generated_text.txt",
+        mime="text/plain"
+    )
 
 # Document Processing
 elif selected_option == "📄 Document Processing":
@@ -69,7 +80,13 @@ elif selected_option == "📄 Document Processing":
         st.session_state['response_text'] = response.text
 
     st.write(st.session_state['response_text'])
-
+      # Create a download button
+    st.download_button(
+    label="Download Text",
+    data=st.session_state['response_text'],
+    file_name="generated_text.txt",
+    mime="text/plain"
+)
 # Image to Text
 elif selected_option == "🖼️ Image to Text":
     st.write("### 🖼️ Image to Text")
@@ -86,7 +103,13 @@ elif selected_option == "🖼️ Image to Text":
         st.session_state['response_text'] = response.text
 
     st.write(st.session_state['response_text'])
-
+      # Create a download button
+    st.download_button(
+    label="Download Text",
+    data=st.session_state['response_text'],
+    file_name="generated_text.txt",
+    mime="text/plain"
+)
 # Audio to Text
 elif selected_option == "🔊 Audio to Text":
     st.write("### 🎧 Audio to Text")
@@ -113,7 +136,13 @@ elif selected_option == "🔊 Audio to Text":
         os.remove(temp_audio_path)
 
     st.write(st.session_state.get('response_text', ''))
-
+      # Create a download button
+    st.download_button(
+    label="Download Text",
+    data=st.session_state['response_text'],
+    file_name="generated_text.txt",
+    mime="text/plain"
+)
 
 # Code Generation
 elif selected_option == "💻 Code Generation":
@@ -127,7 +156,13 @@ elif selected_option == "💻 Code Generation":
         st.session_state['response_text'] = response.text
 
     st.write(st.session_state['response_text'])
-
+      # Create a download button
+    st.download_button(
+    label="Download Text",
+    data=st.session_state['response_text'],
+    file_name="generated_text.txt",
+    mime="text/plain"
+)
 # Footer with name
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("### Created by **Najma Razzaq** 💻")
