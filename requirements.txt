@@ -1,7 +1,5 @@
-streamlit
-google-generativeai
-fitz-pymupdf
-Pillow
-
-# Optional, for temporary file handling
-tempfile
+protobuf==5.27.3
+streamlit>=1.20.0
+google-generativeai>=0.1.0  # Ensure correct naming
+PyMuPDF>=1.22.0
+Pillow>=9.3.0
