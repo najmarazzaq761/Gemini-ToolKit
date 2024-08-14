@@ -19,7 +19,7 @@ st.set_page_config(page_title="✨ Gemini Toolkit by Najma Razzaq", page_icon="�
 st.title("🌟Gemini Toolkit")
 
 # Displaying an image from a file
-st.image('gemini.webp',  use_column_width=True)
+st.image('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Build_with_Gemini_dk_16_9_1.width-1600.format-webp.webp',  use_column_width=True)
 
 # st.write("### 👋 Welcome to the Gemini Toolkit by Najma Razzaq! This app uses the power of Gemini models to generate content based on various inputs. Choose a task and get started! 🚀")
 
